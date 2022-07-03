@@ -26,9 +26,7 @@ btnSubmit.addEventListener("click", (e)=> {
          background:"#fff"
           })
 
-    //  alert ("El seguro del " + resultado.marca +" "+ resultado.modelo + " sale $" + seguro + " por mes.")
-        //mensaje.innerHTML = `<h2>El seguro del ${resultado.marca} ${resultado.modelo} sale $${seguro} por mes.</h2> `
-        //guardaBusqueda()
+
         guardaBusquedaJSON()
      } else if
         (infoAutos.find( p => p.marca.toLocaleLowerCase() === marcaAuto.value.toLocaleLowerCase()) && operacion.value.toLocaleLowerCase() == "precio final"){
@@ -46,14 +44,11 @@ btnSubmit.addEventListener("click", (e)=> {
           background:"#fff"
            })
 
-        //mensaje.innerHTML = `<h2>El precio final del ${resultado.marca} ${resultado.modelo} es de $${precioFinal} (IVA incluido).</h2> `  
-        //guardaBusqueda()
         guardaBusquedaJSON()
-       // alert ("El precio final del " + resultado.marca +" "+ resultado.modelo + " es de $" + precioFinal + " (IVA incluido)")
+      
         } 
         else if
         ( marcaAuto.value.toLocaleLowerCase() === "" || operacion.value.toLocaleLowerCase() == ""){
-       // alert ("⚠️ Recuerda completar todos los campos")
        mensaje.innerHTML = "<h2>⚠️ Recuerda completar todos los campos</h2>"
         } 
         else {
@@ -68,7 +63,16 @@ verMas.addEventListener("click", ()=> {
 
 
 function mensajeFinal(){
-  mensaje.innerHTML = "<h2>Sorry, no tenemos ese auto 😔</h2>"
+  Swal.fire({
+    title: 'Sorry 😔',
+    text: 'No tenemos ese auto',
+    icon: 'error',
+    color:"#100423",
+    iconColor:"#32424",
+    confirmButtonColor: "#fa0050",
+    confirmButtonText: 'Aceptar',
+    background:"#fff"
+     })
 }
 
 
